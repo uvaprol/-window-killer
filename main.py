@@ -52,6 +52,7 @@ def close_games_tabs():
         print("\nМониторинг остановлен.")
 
 if __name__ == "__main__":
+    print('start')
     thread_closer = threading.Thread(target=windows_closer, daemon=True)
     thread_tabs = threading.Thread(target=close_games_tabs, daemon=True)
 
