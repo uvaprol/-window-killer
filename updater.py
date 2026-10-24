@@ -10,11 +10,11 @@ REPO_NAME = "-window-killer"
 
 def check_for_updates():
     try:
-        url = f"https://github.com/{REPO_OWNER}/{REPO_NAME}/releases/latest"
+        url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/releases/latest"
         response = requests.get(url, timeout=10)
 
         if response.status_code != 200:
-            print("Не удалось проверить обновления.")
+            print("Не удалось проверить обновления.", response.status_code)
             return
 
         data = response.json()
